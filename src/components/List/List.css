@@ -1,0 +1,28 @@
+.index {
+  width: 100%;
+  height: 100%;
+  padding: 8% 2%;
+  box-sizing: border-box;
+  float: left;
+}
+
+.mainContainer {
+  width: 100%;
+  display: inline-block;
+  box-sizing: border-box;
+  padding-bottom: 20px;
+  border-radius: 3px;
+  background: #E2E4E6;
+}
+
+.listNameContainer {
+  height: 40px;
+  line-height: 40px;
+  padding: 10px 15px 0 15px;
+}
+
+.listContainer {
+  background: #C2CCD1;
+  box-sizing: border-box;
+  padding: 10px 10px;
+}
