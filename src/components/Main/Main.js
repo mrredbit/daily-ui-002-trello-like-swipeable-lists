@@ -2,8 +2,10 @@ require('normalize.css/normalize.css');
 import List from '../List';
 import React from 'react';
 import Slider from 'react-slick';
+import Dragula from 'react-dragula';
 
 import styles from './Main.css';
+import '../../styles/dragula/dragula.css';
 import '../../styles/slick/slick.css';
 import '../../styles/slick/slick-theme.css';
 import '../../styles/general.css';

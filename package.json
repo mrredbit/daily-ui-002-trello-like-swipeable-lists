@@ -68,6 +68,7 @@
     "react": "^15.0.0",
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.0.0",
+    "react-dragula": "^1.1.17",
     "react-slick": "0.14.2",
     "sass-loader": "^6.0.1",
     "slick-carousel": "^1.6.0"
