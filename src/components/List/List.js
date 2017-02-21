@@ -16,8 +16,7 @@ class List extends React.Component {
           {this.props.listName}
         </div>
         {
-          !!this.props.list.length &&
-          <div className={styles.listContainer} ref={this.dragulaDecorator}>
+          <div className={styles.listContainer} ref={(component)=> this.props.addDraggable(component)}>
             {
               this.props.list.map((item, index) => {
                 return <Card key={index}>{item}</Card>
@@ -29,11 +28,5 @@ class List extends React.Component {
     </div>
   }
 
-  dragulaDecorator = (componentBackingInstance) => {
-    if (componentBackingInstance) {
-      let options = { };
-      Dragula([componentBackingInstance], options);
-    }
-  }
 }
 export default List;

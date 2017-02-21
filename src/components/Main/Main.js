@@ -60,15 +60,46 @@ class AppComponent extends React.Component {
       infinite: false,
       slidesToShow: 1,
       slidesToScroll: 1,
-      speed: 200
+      speed: 200,
+      swipe: !this.state.isDragging
     };
     return (
       <div className={styles.index}>
         <Slider {...settings}>
-          {data.map(listObj => <div key={listObj.name}><List listName={listObj.name} list={listObj.list}/></div>)}
+          {data.map(listObj => <div key={listObj.name}>
+            <List listName={listObj.name}
+                  list={listObj.list}
+                  addDraggable={this.addDraggable}/>
+          </div>)}
         </Slider>
       </div>
     );
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      isDragging: false
+    };
+    this.draggables = [];
+  }
+
+  componentDidMount() {
+    let options = {
+      moves: () => {
+        this.setState(Object.assign({}, this.stage, {isDragging: true}));
+        return true;
+      },
+      accepts: () => {
+        this.setState(Object.assign({}, this.stage, {isDragging: false}));
+        return true;
+      }
+    };
+    Dragula(this.draggables, options);
+  }
+
+  addDraggable = (component) => {
+    this.draggables.push(component);
   }
 }
 
